@@ -1,0 +1,42 @@
+[
+  {
+    "id": "es_001",
+    "text": "¿Dónde está el baño?",
+    "translation": "Where is the bathroom?",
+    "pronunciation": "DOHN-deh eh-STAH el BAH-nyoh",
+    "audioUrl": "/audio/es_001.mp3",
+    "zipfLevel": 1
+  },
+  {
+    "id": "es_002",
+    "text": "Buenos días, ¿cómo estás?",
+    "translation": "Good morning, how are you?",
+    "pronunciation": "BWEH-nos DEE-as, KOH-moh eh-STAHS",
+    "audioUrl": "/audio/es_002.mp3",
+    "zipfLevel": 1
+  },
+  {
+    "id": "es_003",
+    "text": "Me llamo Ana.",
+    "translation": "My name is Ana.",
+    "pronunciation": "meh YAH-moh AH-nah",
+    "audioUrl": "/audio/es_003.mp3",
+    "zipfLevel": 1
+  },
+  {
+    "id": "es_004",
+    "text": "¿Cuánto cuesta esto?",
+    "translation": "How much does this cost?",
+    "pronunciation": "KWAHN-toh KWEH-stah EH-stoh",
+    "audioUrl": "/audio/es_004.mp3",
+    "zipfLevel": 1
+  },
+  {
+    "id": "es_005",
+    "text": "Por favor, habla más despacio.",
+    "translation": "Please speak more slowly.",
+    "pronunciation": "por fah-BOR, AH-blah mahs deh-SPAH-syoh",
+    "audioUrl": "/audio/es_005.mp3",
+    "zipfLevel": 2
+  }
+]

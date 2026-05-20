@@ -1,0 +1,42 @@
+[
+  {
+    "id": "sv_001",
+    "text": "Var är toaletten?",
+    "translation": "Where is the toilet?",
+    "pronunciation": "vaar air too-ah-LET-en",
+    "audioUrl": "/audio/sv_001.mp3",
+    "zipfLevel": 1
+  },
+  {
+    "id": "sv_002",
+    "text": "Hej, vad heter du?",
+    "translation": "Hello, what is your name?",
+    "pronunciation": "hey, vahd HEE-ter doo",
+    "audioUrl": "/audio/sv_002.mp3",
+    "zipfLevel": 1
+  },
+  {
+    "id": "sv_003",
+    "text": "Hur mycket kostar det?",
+    "translation": "How much does it cost?",
+    "pronunciation": "hoor MYK-et KOS-tar deh",
+    "audioUrl": "/audio/sv_003.mp3",
+    "zipfLevel": 1
+  },
+  {
+    "id": "sv_004",
+    "text": "Kan du prata lite långsammare?",
+    "translation": "Can you speak a little more slowly?",
+    "pronunciation": "kan doo PRAH-ta LEE-teh LONG-sahm-ah-reh",
+    "audioUrl": "/audio/sv_004.mp3",
+    "zipfLevel": 2
+  },
+  {
+    "id": "sv_005",
+    "text": "Jag förstår inte.",
+    "translation": "I don't understand.",
+    "pronunciation": "yahg fur-STOR in-teh",
+    "audioUrl": "/audio/sv_005.mp3",
+    "zipfLevel": 2
+  }
+]

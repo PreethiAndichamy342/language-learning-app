@@ -1,0 +1,8 @@
+{
+  "languages": ["spanish", "chinese", "swedish"],
+  "defaultLanguage": "spanish",
+  "zipfLevels": [1, 2, 3, 4, 5],
+  "audioPath": "/audio",
+  "modelsPath": "/models",
+  "sentencesPerLevel": 50
+}

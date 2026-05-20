@@ -1,0 +1,42 @@
+[
+  {
+    "id": "zh_001",
+    "text": "洗手间在哪里？",
+    "translation": "Where is the restroom?",
+    "pronunciation": "Xǐshǒujiān zài nǎlǐ?",
+    "audioUrl": "/audio/zh_001.mp3",
+    "zipfLevel": 1
+  },
+  {
+    "id": "zh_002",
+    "text": "你好，你叫什么名字？",
+    "translation": "Hello, what is your name?",
+    "pronunciation": "Nǐ hǎo, nǐ jiào shénme míngzì?",
+    "audioUrl": "/audio/zh_002.mp3",
+    "zipfLevel": 1
+  },
+  {
+    "id": "zh_003",
+    "text": "这个多少钱？",
+    "translation": "How much is this?",
+    "pronunciation": "Zhège duōshǎo qián?",
+    "audioUrl": "/audio/zh_003.mp3",
+    "zipfLevel": 1
+  },
+  {
+    "id": "zh_004",
+    "text": "请说慢一点。",
+    "translation": "Please speak a little slower.",
+    "pronunciation": "Qǐng shuō màn yīdiǎn.",
+    "audioUrl": "/audio/zh_004.mp3",
+    "zipfLevel": 2
+  },
+  {
+    "id": "zh_005",
+    "text": "我不明白。",
+    "translation": "I don't understand.",
+    "pronunciation": "Wǒ bù míngbái.",
+    "audioUrl": "/audio/zh_005.mp3",
+    "zipfLevel": 2
+  }
+]
