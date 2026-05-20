@@ -2,37 +2,40 @@ import { LANG_CODES } from '../config/constants.js';
 
 let voskModel = null;
 
-const webSpeechRecognize = (langCode) =>
-  new Promise((resolve, reject) => {
-    const SR = window.SpeechRecognition ?? window.webkitSpeechRecognition;
-    if (!SR) return reject(new Error('Speech recognition not supported'));
-    const rec = new SR();
-    rec.lang = langCode;
-    rec.interimResults = false;
-    rec.maxAlternatives = 1;
-    rec.onresult = (e) =>
-      resolve({ transcript: e.results[0][0].transcript, confidence: e.results[0][0].confidence });
-    rec.onerror = (e) => reject(new Error(e.error));
-    rec.start();
+const transcribeBlob = (blob) =>
+  new Promise(async (resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error('Vosk timeout')), 10_000);
+    try {
+      const ctx = new AudioContext({ sampleRate: 16000 });
+      const audioBuffer = await ctx.decodeAudioData(await blob.arrayBuffer());
+      const rec = new voskModel.KaldiRecognizer(16000);
+      rec.on('result', (msg) => {
+        clearTimeout(timer);
+        resolve({ transcript: msg.result?.text ?? '', confidence: 0.8 });
+        rec.remove();
+        ctx.close();
+      });
+      rec.acceptWaveform(audioBuffer);
+      rec.retrieveFinalResult();
+    } catch (e) { clearTimeout(timer); reject(e); }
   });
 
 export const VoskService = {
-  async initialize(modelPath) {
+  isReady: () => voskModel !== null,
+
+  async initialize(modelZipUrl) {
     if (voskModel) return;
     try {
-      const { createModel } = await import('@vosk/vosk-browser');
-      voskModel = await createModel(modelPath);
+      const { createModel } = await import('vosk-browser');
+      voskModel = await createModel(modelZipUrl);
     } catch {
-      console.warn('[Vosk] WASM unavailable — Web Speech API fallback active');
+      console.warn('[Vosk] Model unavailable — Web Speech API fallback active');
     }
   },
 
-  async recognize(audioBlob, language) {
-    const langCode = LANG_CODES[language] ?? 'en-US';
-    if (!voskModel) return webSpeechRecognize(langCode);
-    const arrayBuffer = await audioBlob.arrayBuffer();
-    const result = await voskModel.transcribe(arrayBuffer);
-    return { transcript: result.text, confidence: result.confidence ?? 0.8 };
+  async recognize(blob) {
+    if (!voskModel) throw new Error('Vosk not ready');
+    return transcribeBlob(blob);
   },
 
   score(transcript, expected) {
@@ -40,6 +43,6 @@ export const VoskService = {
     const got = clean(transcript).split(/\s+/);
     const exp = clean(expected).split(/\s+/);
     const hits = got.filter((w) => exp.includes(w)).length;
-    return Math.round((hits / Math.max(got.length, exp.length)) * 100);
+    return Math.round((hits / Math.max(got.length, exp.length, 1)) * 100);
   },
 };

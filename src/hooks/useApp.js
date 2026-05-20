@@ -63,7 +63,7 @@ export function useApp() {
 
   const onLanguageChange = useCallback((lang) => {
     setLanguage(lang);
-    VoskService.initialize(`/models/vosk-model-small-${lang}`);
+    VoskService.initialize(`/models/vosk-model-small-${lang}.zip`);
   }, []);
 
   return {
