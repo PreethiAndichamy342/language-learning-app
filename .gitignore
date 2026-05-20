@@ -11,3 +11,8 @@ Thumbs.db
 public/models/*.tar.gz
 public/models/vosk-*/
 .firebase/
+
+# Screenshots — commit PNGs intentionally, ignore raw/uncompressed exports
+screenshots/*.psd
+screenshots/*.xcf
+screenshots/raw/
